@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Vjestina2015_Projekt.Models.Tvrtka>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index", "Tvrtka", FormMethod.Get))
+{
+
+    <p>
+        Ime: @Html.TextBox("searchString")
+        <input type="submit" value="Filtriraj" />
+    </p>
+}
+
+<p>
+    @Html.ActionLink("Dodaj tvrtku", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Opis)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Opis)
+        </td>
+        <td>
+            @Html.ActionLink("Uredi", "Edit", new { id=item.TvrtkaID }) |
+            @Html.ActionLink("Pogledaj", "Details", new { id=item.TvrtkaID }) |
+            @Html.ActionLink("Obriši", "Delete", new { id=item.TvrtkaID })
+        </td>
+    </tr>
+}
+
+</table>

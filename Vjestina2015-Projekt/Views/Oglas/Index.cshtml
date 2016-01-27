@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Vjestina2015_Projekt.Models.Oglas>
+
+@{
+    ViewBag.Title = "Oglasi";
+}
+
+<h2>Oglasi</h2>
+
+@using (Html.BeginForm("Index", "Oglas", FormMethod.Get))
+{
+<p>
+    @Html.Label("Ključna riječ:")
+    @Html.TextBox("searchString")
+    <input class="btn-default" type="submit" value="Filtriraj" />
+</p>
+}
+
+<p>
+    @Html.ActionLink("Dodaj Oglas", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Naslov)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tvrtka)
+        </th>
+        <th>
+            Plaća
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naslov)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tvrtka)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Placa)
+            kn/h
+        </td>
+
+        <td>
+            @if (item.Korisnik == User.Identity.Name)
+            {
+                @Html.ActionLink("Uredi", "Edit", new { id = item.OglasID }) 
+                @Html.Name("|")
+            }
+            @Html.ActionLink("Pogledaj", "Details", new { id=item.OglasID }) |
+
+            @if (item.Korisnik == User.Identity.Name)
+            {
+                @Html.ActionLink("Obriši", "Delete", new { id = item.OglasID })
+            }
+            
+        </td>
+    </tr>
+}
+
+</table>

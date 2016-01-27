@@ -1,0 +1,72 @@
+﻿@model Vjestina2015_Projekt.Models.Tvrtka
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tvrtka</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ime)
+        </dd>
+
+        <dt>
+            Prosječna ocjena
+        </dt>
+
+        <dd>
+            @ViewBag.Prosjek
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Uredi", "Edit", new { id = Model.TvrtkaID }) |
+    @Html.ActionLink("Nazad na popis", "Index") |
+    @Html.ActionLink("Recenziraj", "../Recenzija/Create", new { tvrtka = Model.Ime, korisnik = User.Identity.Name})
+</p>
+
+<hr />
+<h4>Recenzije</h4>
+<table class="table">
+    <tr>
+        <td>Korisnik</td>
+        <td>Naslov</td>
+        <td>Ocjena</td>
+        <td></td>
+    </tr>
+    @foreach(var r in ViewBag.Recenzije)
+    {
+        <tr>
+            <td>@r.Korisnik</td>
+            <td>@r.Naslov</td>
+            <td>@r.Ocjena</td>
+            <td>
+                @Html.ActionLink("Pogledaj", "../Recenzija/Details", new { id = r.RecenzijaID }) |
+                @if (r.Korisnik == User.Identity.Name)
+                {
+                    @Html.ActionLink("Uredi", "../Recenzija/Edit", new { id = r.RecenzijaID })
+                    @Html.DisplayName(" | ")
+                    @Html.ActionLink("Obriši", "../Recenzija/Delete", new { id = r.RecenzijaID })
+
+                }
+            </td>
+        </tr>
+    }
+</table>

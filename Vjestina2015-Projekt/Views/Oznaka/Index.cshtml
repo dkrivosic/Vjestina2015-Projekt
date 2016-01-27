@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Vjestina2015_Projekt.Models.Oznaka>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Naziv)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naziv)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.OznakaID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.OznakaID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.OznakaID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

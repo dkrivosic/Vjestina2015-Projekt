@@ -1,0 +1,58 @@
+﻿@model Vjestina2015_Projekt.Models.Oglas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Oglas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Naslov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Naslov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tvrtka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tvrtka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Korisnik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Korisnik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tekst)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tekst)
+        </dd>
+
+        <dt>
+            plaća
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Placa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OglasID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
