@@ -1,23 +1,33 @@
 # HR prakse
 ### Projekt za Vještinu: Razvoj aplikacija u programskom jeziku C#
 
-Aplikacija služi kao baza informacija o studentskim praksama u Hrvatskoj. Cilj je omoguæiti studentima da na jednom mjestu dobiju informacije o praksama i firmama koje ih nude. Studenti æe takoðer moæi ostavljati svoje komentare o firmama koje nude prakse i dati svoju ocjenu firme. Za ostavljanje komentara ili ocjene, student mora biti registriran i prijavljen na svoj raèun, ali komentari æe biti anonimni.
+[prakse.azurewebsites.net](http://prakse.azurewebsites.net)
 
-Postoje dvije vrste korisnika:
-- Admin
-- Obièan korisnik
+Aplikacija služi kao baza informacija o studentskim praksama u Hrvatskoj. Cilj je omoguæiti studentima da na jednom mjestu dobiju informacije o praksama i tvrtkama koje ih nude. Studenti æe takoðer moæi ostavljati svoje komentare o tvrtkama koje nude prakse i dati svoju ocjenu tvrtke. Za ostavljanje komentara ili ocjene, student mora biti registriran i prijavljen na svoj raèun.
 
-Korisnik može:
-- dodati recenziju (komentar)
-- ocijeniti firmu
-- postaviti zahtjev za dodavanje nove firme
-- dodati informaciju o plaæi
-- postaviti zahtjev za dodavanje oglasa
+Svaki korisnik može:
+- Pretraæivati tvrtke po imenu
+- Dodati tvrtku
+- Urediti tvrtku
+- Recenzirati tvrtku
+- Urediti ili obrisati recenziju
+- Obrisati tvrtku
+- Pretraživati oglase po kljuènim rijeèima
+- Dodati oglas
+- Urediti oglas koji je postavio
+- Obrisati oglas koji je postavio
 
-Admin može:
-- Obrisati recenziju (ako je uvredljiva)
-- Odobriti ili odbiti zahtjev za unošenjem nove firme u bazu podataka
-- Odobriti ili odbiti zahtjev za dodavanje oglasa
+Za dodavanje tvrtke potrebno je unijeti:
+- Ime tvrtke
+- Kratki opis
+
+Za dodavanje oglasa potrebno je:
+- Naslov oglasa
+- Izabrati tvrtku na koju se oglas odnosi
+- Napisati tekst oglasa
+- unijeti plaæu izraženu u kn/h
+
+
 
 
 
