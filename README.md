@@ -6,7 +6,7 @@
 Aplikacija služi kao baza informacija o studentskim praksama u Hrvatskoj. Cilj je omoguæiti studentima da na jednom mjestu dobiju informacije o praksama i tvrtkama koje ih nude. Studenti æe takoðer moæi ostavljati svoje komentare o tvrtkama koje nude prakse i dati svoju ocjenu tvrtke. Za ostavljanje komentara ili ocjene, student mora biti registriran i prijavljen na svoj raèun.
 
 Svaki korisnik može:
-- Pretraæivati tvrtke po imenu
+- Pretraživati tvrtke po imenu
 - Dodati tvrtku
 - Urediti tvrtku
 - Recenzirati tvrtku
